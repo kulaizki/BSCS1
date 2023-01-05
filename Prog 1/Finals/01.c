@@ -18,13 +18,12 @@ void main() {
     }
 
     //Second for loop
-    for (i=0; i < count; i++) {
-        if (series[i] == 6)
+    for (i=0; i <count; i++) {
+        if (*(series+i) == 6)
             break;
-            
     }
 
-    loc = i == count ? -1 : i+1;
+    loc = i == count? -1: i+1;
 
     printf("First occurence of 6 is element %d", loc); 
 }
