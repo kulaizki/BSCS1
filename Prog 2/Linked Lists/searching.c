@@ -28,6 +28,12 @@ int main()
     node3->next = NULL;
 
     exists(head, 14) ? printf("14 exists") : printf("14 doesn't exist");
+
+    free(head);
+    free(node1);
+    free(node2);
+
+    return 0;
 }
 
 bool exists(struct Node* head, int value) {
