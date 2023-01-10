@@ -5,7 +5,8 @@ int factorial(int n) {
     return n * factorial(n - 1);
 }
 
-int main() {
+int main() 
+{
     printf("%d\n", factorial(5));  // Output: 120
     return 0;
 }
