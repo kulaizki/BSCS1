@@ -20,6 +20,7 @@ void freeList(struct Node* head);
 
 int main()
 {
+    // not yet finished
     struct Node* head = createNode(1);
 
     struct Node* node1 = createNode(2);

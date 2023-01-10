@@ -22,7 +22,7 @@ void display(struct Node* head) {
     }
 }
 
-void freeNode(struct Node* head) {
+void freeList(struct Node* head) {
     while (head != NULL) {
         struct Node* temp = head;
         head = head->next;
