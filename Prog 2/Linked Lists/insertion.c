@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void insertFront(struct Node* head, int newValue);
-void insertEnd(struct Node* head, int newValue);
-void insertAtPos(struct Node* head, int newValue, int pos);
-
 struct Node {
     int value;
     struct Node* next;
 };
+
+void insertFront(struct Node* head, int newValue);
+void insertEnd(struct Node* head, int newValue);
+void insertAtPos(struct Node* head, int newValue, int pos);
 
 int main()
 {

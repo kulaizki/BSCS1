@@ -1,24 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void display(struct Node* head);
-
 struct Node {
     int value;
     struct Node* next;
 };
 
+void display(struct Node* head);
+
 int main()
 {
+    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
-   return 0; 
+    struct Node* node1 = (struct Node*) malloc(sizeof(struct Node));
+    node1-> value = 5;
+    head->next = node1;
+
+    struct Node* node2 = (struct Node*) malloc(sizeof(struct Node));
+    node2->value = 10;
+    node1->next = node2;
+
+    struct Node* node3 = (struct Node*) malloc(sizeof(struct Node));
+    node3->value = 15;
+    node2->next = node3;
+    
+    node3->next = NULL;
+
+    display(head);
+
+    free(head);
+    free(node1);
+    free(node2);
+
+    return 0; 
 }
 
 void display(struct Node* head) {
     struct Node* current = head->next;
 
     while (current != NULL) {
-        printf("%d", current->value);
+        printf("%d ", current->value);
         current = current->next;
     }
 }
