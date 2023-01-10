@@ -6,11 +6,11 @@ struct Node {
     struct Node* next;
 };
 
-void freeList(struct Node* head);
 void display(struct Node* head);
 void deleteFront(struct Node* head);
 void deleteEnd(struct Node* head);
 void deleteAtPos(struct Node* head, int pos);
+void freeList(struct Node* head);
 
 int main()
 {
@@ -63,15 +63,6 @@ void display(struct Node* head) {
     while (current != NULL) {
         printf("%d ", current->value);
         current = current->next;
-    }
-}
-
-void freeList(struct Node* head) {
-    struct Node* current = head;
-    while (current != NULL) {
-        struct Node* temp = current;
-        current = current->next;
-        free(temp);
     }
 }
 
@@ -130,5 +121,14 @@ void deleteAtPos(struct Node* head, int pos) {
         current->next = temp->next;
 
         free (temp);
+    }
+}
+
+void freeList(struct Node* head) {
+    struct Node* current = head;
+    while (current != NULL) {
+        struct Node* temp = current;
+        current = current->next;
+        free(temp);
     }
 }
