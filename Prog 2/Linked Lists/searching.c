@@ -11,7 +11,23 @@ bool exists(struct Node* head, int value);
 
 int main()
 {
+    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
+    struct Node* node1 = (struct Node*) malloc(sizeof(struct Node));
+    node1-> value = 7;
+    head->next = node1;
+
+    struct Node* node2 = (struct Node*) malloc(sizeof(struct Node));
+    node2->value = 14;
+    node1->next = node2;
+
+    struct Node* node3 = (struct Node*) malloc(sizeof(struct Node));
+    node3->value = 21;
+    node2->next = node3;
+    
+    node3->next = NULL;
+
+    exists(head, 14) ? printf("14 exists") : printf("14 doesn't exist");
 }
 
 bool exists(struct Node* head, int value) {
