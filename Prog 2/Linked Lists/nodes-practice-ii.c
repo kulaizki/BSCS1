@@ -8,8 +8,8 @@ struct Node {
 
 int main(void)
 {
-    struct Node* node1 = (struct Node*) malloc(sizeof(struct Node));
-    struct Node* node2 = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* node1 = (struct Node*) malloc(sizeof(struct Node)); // new Node
+    struct Node* node2 = (struct Node*) malloc(sizeof(struct Node)); // new Node
 
     printf("Enter number 1: ");
     scanf("%d", node1);
