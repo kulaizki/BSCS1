@@ -15,7 +15,6 @@ struct Node* createNode(int value) {
 
 void display(struct Node* head) {
     struct Node* current = head->next;
-
     while (current != NULL) {
         printf("%d ", current->value);
         current = current->next;
@@ -32,7 +31,7 @@ void freeList(struct Node* head) {
 
 int main()
 {
-    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
     struct Node* node1 = createNode(2);
     head->next = node1;
