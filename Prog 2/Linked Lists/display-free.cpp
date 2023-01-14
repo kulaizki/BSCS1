@@ -9,20 +9,19 @@ struct Node {
 
 int main()
 {
-    struct Node* node1 = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* node1 = new Node;
     node1->value = 7;
 
-    struct Node* node2 = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* node2 = new Node;
     node1->next = node2;
     node2->value = 8;
 
-    struct Node* node3 = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* node3 = new Node;
     node2->next = node3;
     node3->value = 9;
     node3->next = NULL;
 
-    struct Node* current = (struct Node*) malloc(sizeof(struct Node));
-    current = node1;
+    struct Node* current = node1;
 
     // traverses and displays all the nodes' memory address and value
     while (current != NULL) {
@@ -34,7 +33,7 @@ int main()
     current = node1;
     while (current != NULL) {
         struct Node* next = current->next;
-        free(current);
+        delete current;
         current = next;
     }
 
