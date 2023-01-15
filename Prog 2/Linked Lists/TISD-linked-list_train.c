@@ -12,26 +12,31 @@ void display(struct Node* head);
 void insertFront(struct Node* head, int val);
 void insertEnd(struct Node* head, int val);
 void insertAtPos(struct Node*head, int val, int pos);
-bool search(struct Node* head, int val);
 void deleteFront(struct Node* head);
 void deleteEnd(struct Node* head);
 void deleteAtPos(struct Node* head, int pos);
+bool search(struct Node* head, int val);
 void freeList(struct Node* head);
 
 int main()
 {
-    // not yet finished
-    struct Node* head = createNode(1);
+    // sentinel node
+    struct Node* head;
 
-    struct Node* node1 = createNode(2);
+    struct Node* node1 = createNode(1);
     head->next = node1;
-    struct Node* node2 = createNode(4);
+    struct Node* node2 = createNode(2);
     node1->next = node2;
-    struct Node* node3 = createNode(6);
+    struct Node* node3 = createNode(3);
     node2->next = node3;
-    struct Node* node4 = createNode(8);
+    struct Node* node4 = createNode(4);
     node3->next = node4;
-
+    struct Node* node5 = createNode(5);
+    node4->next = node5;
+    struct Node* node6 = createNode(6);
+    node5->next = node6;
+    struct Node* node7 = createNode(7);
+    node6->next = node7;
 
     return 0;
 }
@@ -44,11 +49,18 @@ struct Node* createNode(int value) {
 }
 
 void display(struct Node* head) {
-
+    struct Node* current = head->next;
+    while (current != NULL) {
+        printf("%d ", current->value);
+        current = current->next;
+    }
 }
 
 void insertFront(struct Node* head, int val) {
-
+    struct Node* newNode = createNode(val);
+    struct Node* firstNode = head->next;
+    head->next = newNode;
+    newNode->next = firstNode;
 }
 
 void insertEnd(struct Node* head, int val) {
@@ -56,10 +68,6 @@ void insertEnd(struct Node* head, int val) {
 }
 
 void insertAtPos(struct Node*head, int val, int pos) {
-
-}
-
-bool search(struct Node* head, int val) {
 
 }
 
@@ -75,6 +83,22 @@ void deleteAtPos(struct Node* head, int pos) {
 
 }
 
-void freeList(struct Node* head) {
+bool search(struct Node* head, int val) {
+    struct Node* current = head->next;
+    while (current != NULL) {
+        if (current->value == val) {
+            return true;
+        }
+        current = current->next;  
+    }
+    return false;
+}
 
+void freeList(struct Node* head) {
+    struct Node* current = head->next;
+    while (current != NULL) {
+        struct Node* temp = head;
+        current = current->next;
+        free(temp);
+    }
 }
