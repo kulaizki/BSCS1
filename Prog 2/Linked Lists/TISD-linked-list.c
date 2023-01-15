@@ -20,9 +20,10 @@ void freeList(struct Node* head);
 
 int main()
 {
-    // best practice to have a sentinel node
+    // best practice to have a sentinel/head node
     struct Node* head;
 
+    // point point point!!! -> -> -> -> :D
     struct Node* node1 = createNode(1);
     head->next = node1;
     struct Node* node2 = createNode(2);
@@ -30,7 +31,7 @@ int main()
     struct Node* node3 = createNode(3);
     node2->next = node3;
     struct Node* node4 = createNode(4);
-    node3->next = node4;
+    node3->next = node4; 
     struct Node* node5 = createNode(5);
     node4->next = node5;
     struct Node* node6 = createNode(6);
