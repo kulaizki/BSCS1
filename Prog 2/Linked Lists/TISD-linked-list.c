@@ -25,6 +25,7 @@ int main()
 
 void display(struct Node* head) {
     struct Node* current = head->next;
+
     while (current != NULL) {
         printf("%d ", current->value);
         current = current->next;
@@ -52,7 +53,6 @@ void insertEnd(struct Node* head, int val) {
     while (current->next != NULL) {
         current = current->next;
     }
-
     current->next = newNode;
 }
 
@@ -75,8 +75,19 @@ void insertAtPos(struct Node* head, int val, int pos) {
     }
 }
 
-bool search(struct Node* head, int val) {
+bool exists(struct Node* head, int val) {
+    bool flag = false;
+    struct Node* current = head->next;
 
+    while (current != NULL) {
+        if (current->value == val) {
+            flag = true;
+            break;
+        }
+
+        current = current->next;
+    }
+    return flag;
 }
 
 void deleteFront(struct Node* head) {
