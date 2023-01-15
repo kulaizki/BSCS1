@@ -7,6 +7,7 @@ struct Node {
     struct Node* next;
 };
 
+struct Node* createNode(int value);
 void display(struct Node* head);
 void insertFront(struct Node* head, int val);
 void insertEnd(struct Node* head, int val);
@@ -21,6 +22,13 @@ int main()
 {
 
     return 0;
+}
+
+struct Node* createNode(int value) {
+    struct Node* newNode= (struct Node*) malloc(sizeof(struct Node));
+    newNode->value = value;
+    newNode->next = NULL;
+    return newNode;
 }
 
 void display(struct Node* head) {
@@ -50,9 +58,9 @@ void insertEnd(struct Node* head, int val) {
 
     struct Node* current = head;
 
-    while (current->next != NULL) {
+    while (current->next != NULL)
         current = current->next;
-    }
+
     current->next = newNode;
 }
 
@@ -91,22 +99,16 @@ bool exists(struct Node* head, int val) {
 }
 
 void deleteFront(struct Node* head) {
-    // create a pointer to the current first node
     struct Node* firstNode = head->next;
 
     if (firstNode != NULL) {
-        // make the head point to the node printed
-        // to by the first node
         head->next = firstNode->next;
-
-        // delete the first node
         free(firstNode);
     }
 }
 
 void deleteEnd(struct Node* head) {
     struct Node* prev = head;
-
     struct Node* current = head->next;
 
     if (current != NULL) {
@@ -114,9 +116,7 @@ void deleteEnd(struct Node* head) {
             prev = prev->next;
             current = current->next;
         }
-
         free(current);
-
         prev->next = NULL;
     } 
 }
@@ -133,7 +133,6 @@ void deleteAtPos(struct Node* head, int pos) {
     if (current != NULL) {
         struct Node* temp = current->next;
         current->next = temp->next;
-
         free (temp);
     }
 }
