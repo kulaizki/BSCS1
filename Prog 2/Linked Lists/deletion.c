@@ -125,19 +125,10 @@ void deleteAtPos(struct Node* head, int pos) {
 }
 
 void freeList(struct Node* head) {
-    while (head != NULL) {
-        struct Node* temp = head;
-        head = head->next;
+    struct Node* current = head;
+    while (current != NULL) {
+        struct Node* temp = current;
+        current = current->next;
         free(temp);
     }
 }
-
-// optional for more redability
-// void freeList(struct Node* head) {
-//     struct Node* current = head;
-//     while (current != NULL) {
-//         struct Node* temp = current;
-//         current = current->next;
-//         free(temp);
-//     }
-// }
