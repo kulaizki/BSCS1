@@ -38,6 +38,10 @@ int main()
     struct Node* node7 = createNode(7);
     node6->next = node7;
 
+    printf("Initial list: "); display(head);
+    deleteAtPos(head, 3);
+    printf("\nDelete pos 4: "); display(head);
+
     return 0;
 }
 
@@ -111,7 +115,19 @@ void deleteEnd(struct Node* head) {
 }
 
 void deleteAtPos(struct Node* head, int pos) {
+    struct Node* current = head->next;
+    int i = 1;
+    while (i < pos-1 && current != NULL) {
+        current = current->next;
+        i++;
+    }
 
+    if (current != NULL) {
+        struct Node* temp = current->next;
+        current->next = temp->next;
+        free(temp);
+    }
+    printf("\nvalue of i = %d", i);
 }
 
 bool search(struct Node* head, int val) {

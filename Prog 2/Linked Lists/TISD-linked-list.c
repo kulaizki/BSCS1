@@ -125,7 +125,7 @@ void insertAtPos(struct Node* head, int val, int pos) {
     }
 
     if (current != NULL) {
-        struct Node* temp = current-> next;
+        struct Node* temp = current->next;
         current->next = newNode;
         newNode->next = temp;
     }
