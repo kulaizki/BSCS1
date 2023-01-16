@@ -39,8 +39,18 @@ int main()
     node6->next = node7;
 
     printf("Initial list: "); display(head);
-    deleteAtPos(head, 3);
-    printf("\nDelete pos 4: "); display(head);
+
+    insertFront(head, 0);
+    printf("\nInserted \"0\" to front: "); display(head);
+
+    insertEnd(head, 9);
+    printf("\nInserted \"9\" to end: "); display(head);
+
+    insertAtPos(head, 8, 8);
+    printf("\nInserted \"8\" into position 8: "); display(head);
+
+
+
 
     return 0;
 }
@@ -80,7 +90,7 @@ void insertAtPos(struct Node*head, int val, int pos) {
     struct Node* newNode = createNode(val);
     struct Node* current = head->next;
 
-    int i = 0;
+    int i = 1;
     while (i < pos && current != NULL) {
         current = current->next;
         i++;
@@ -127,7 +137,6 @@ void deleteAtPos(struct Node* head, int pos) {
         current->next = temp->next;
         free(temp);
     }
-    printf("\nvalue of i = %d", i);
 }
 
 bool search(struct Node* head, int val) {
