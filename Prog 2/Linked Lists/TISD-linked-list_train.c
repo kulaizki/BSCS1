@@ -21,7 +21,7 @@ void freeList(struct Node* head);
 int main()
 {
     // sentinel node
-    struct Node* head;
+    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
     struct Node* node1 = createNode(1);
     head->next = node1;
@@ -49,8 +49,25 @@ int main()
     insertAtPos(head, 8, 8);
     printf("\nInserted \"8\" into position 8: "); display(head);
 
+    deleteFront(head);
+    printf("\nDeleted front: "); display(head);
 
+    deleteEnd(head);
+    printf("\nDeleted end: "); display(head);
 
+    deleteAtPos(head, 4);
+    printf("\nDeleted value in position 4: "); display(head);
+
+    int num1 = 4, num2 = 7;
+    printf("\nNumbers to be searched: 4 and 7");
+    search(head, 4) 
+        ? printf("\n4 is in the list") 
+        : printf("\n4 is not in the list");
+    search(head, 7)
+        ? printf("\n7 is in the list") 
+        : printf("\n7 is not in the list"); 
+
+    freeList(head);
 
     return 0;
 }
@@ -115,7 +132,7 @@ void deleteEnd(struct Node* head) {
     struct Node* prev = head;
     struct Node* current = head->next;
     if (current != NULL) {
-        while (current != NULL) {
+        while (current->next != NULL) {
             prev = prev->next;
             current = current->next;
         }
@@ -151,9 +168,9 @@ bool search(struct Node* head, int val) {
 }
 
 void freeList(struct Node* head) {
-    struct Node* current = head->next;
+    struct Node* current = head;
     while (current != NULL) {
-        struct Node* temp = head;
+        struct Node* temp = current;
         current = current->next;
         free(temp);
     }
