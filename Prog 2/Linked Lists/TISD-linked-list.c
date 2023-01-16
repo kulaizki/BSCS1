@@ -21,7 +21,7 @@ void freeList(struct Node* head);
 int main()
 {
     // best practice to have a sentinel/head node
-    struct Node* head;
+    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
     // point point point!!! -> -> -> -> :D
     struct Node* node1 = createNode(1);
@@ -60,7 +60,7 @@ int main()
     printf("\nDeleted at position 4: "); display(head);
 
     printf("\nNumbers to search: 7 and 10");
-    int search1 = 7, search2 = 10;
+    int search1 = 7, search2 = 9;
     search(head, search1) 
         ? printf("\n%d is in the list.", search1) 
         : printf("\n%d is not in the list.", search1);
@@ -74,7 +74,7 @@ int main()
 }
 
 struct Node* createNode(int value) {
-    struct Node* newNode= (struct Node*) malloc(sizeof(struct Node));
+    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
 
     newNode->value = value;
     newNode->next = NULL;
@@ -155,10 +155,10 @@ void deleteEnd(struct Node* head) {
 }
 
 void deleteAtPos(struct Node* head, int pos) {
-    struct Node* current = head;
+    struct Node* current = head->next;
 
-    int i = 0;
-    while (i < pos && current != NULL) {
+    int i = 1;
+    while (i < pos-1 && current != NULL) {
         current = current->next;
         i++;
     }
@@ -166,7 +166,7 @@ void deleteAtPos(struct Node* head, int pos) {
     if (current != NULL) {
         struct Node* temp = current->next;
         current->next = temp->next;
-        free (temp);
+        free(temp);
     }
 }
 
@@ -179,14 +179,13 @@ bool search(struct Node* head, int val) {
             flag = true;
             break;
         }
-
         current = current->next;
     }
     return flag;
 }
 
 void freeList(struct Node* head) {
-    struct Node* current = head->next;
+    struct Node* current = head;
 
     while (current != NULL) {
         struct Node* temp = current;
