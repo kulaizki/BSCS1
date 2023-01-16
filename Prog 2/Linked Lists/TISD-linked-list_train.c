@@ -64,19 +64,50 @@ void insertFront(struct Node* head, int val) {
 }
 
 void insertEnd(struct Node* head, int val) {
-
+    struct Node* newNode = createNode(val);
+    struct Node* current = head->next;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+    current->next = newNode;
 }
 
 void insertAtPos(struct Node*head, int val, int pos) {
+    struct Node* newNode = createNode(val);
+    struct Node* current = head->next;
 
+    int i = 0;
+    while (i < pos && current != NULL) {
+        current = current->next;
+        i++;
+    }
+
+    if (current != NULL) {
+        struct Node* temp = current->next;
+        current->next = newNode;
+        newNode->next = temp;
+    }
 }
 
 void deleteFront(struct Node* head) {
-
+    struct Node* firstNode = head->next;
+    if (firstNode != NULL) {
+        head->next = firstNode->next;
+        free(firstNode);
+    }
 }
 
 void deleteEnd(struct Node* head) {
-
+    struct Node* prev = head;
+    struct Node* current = head->next;
+    if (current != NULL) {
+        while (current != NULL) {
+            prev = prev->next;
+            current = current->next;
+        }
+        free(current);
+        prev->next = NULL;
+    }
 }
 
 void deleteAtPos(struct Node* head, int pos) {
