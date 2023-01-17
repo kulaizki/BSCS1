@@ -8,14 +8,30 @@ struct Node {
 
 struct Node* createNode(int val);
 void display(struct Node* head);  
-void reverse(struct Node* head);
+struct Node* reverse(struct Node* head);
 
 int main()
 {
     struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
     struct Node* node1 = createNode(1);
+    head->next = node1;
 
+    struct Node* node2 = createNode(2);
+    node1->next = node2;
+
+    struct Node* node3 = createNode(3);
+    node2->next = node3;
+
+    display(head);
+    head = reverse(head);
+    printf("\n");
+    display(head);
+
+    free(head);
+    free(node1);
+    free(node2);
+    free(node3);
 
     return 0;
 }
@@ -35,15 +51,16 @@ void display(struct Node* head) {
     }
 }
 
-void reverse(struct Node* head) {
+struct Node* reverse(struct Node* head) {
     struct Node* prev = NULL;
     struct Node* current = head;
-    struct Node* next;
+    struct Node* next = NULL;
     while (current != NULL) {
         next = current->next;
         current->next = prev;
         prev = current;
-        current = prev;
+        current = next;
     }
     head = prev;
+    return head;
 }
