@@ -4,28 +4,30 @@
 struct Node {
     int value;
     struct Node* next;
-    struct Node* prev;
 };
 
 struct Node* createNode(int val);
-void displayHeadToTail(struct Node* head);  
+void display(struct Node* head);  
 void reverse(struct Node* head);
-
 
 int main()
 {
-    
+    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
+
+    struct Node* node1 = createNode(1);
+
+
+    return 0;
 }
 
 struct Node* createNode(int val) {
     struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
     newNode->value = val;
     newNode->next = NULL;
-    newNode->prev = NULL;
     return newNode;
 }
 
-void displayHeadToTail(struct Node* head) {
+void display(struct Node* head) {
     struct Node* current = head->next;
     while (current != NULL) {
         printf("%d ", current->value);
