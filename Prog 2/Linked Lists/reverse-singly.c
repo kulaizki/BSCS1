@@ -12,6 +12,7 @@ struct Node* reverse(struct Node* head);
 
 int main()
 {
+    // in progress
     struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
     struct Node* node1 = createNode(1);
