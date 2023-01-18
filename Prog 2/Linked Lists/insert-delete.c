@@ -6,7 +6,22 @@ struct node {
     struct node* next;
 };
 
+void insert(int data);
+void delete(int data);
+void printList();
+
 struct node* head = NULL;
+
+int main() {
+    insert(1);
+    insert(2);
+    insert(3);
+    insert(4);
+    printList();
+    delete(3);
+    printList();
+    return 0;
+}
 
 void insert(int data) {
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
@@ -40,17 +55,6 @@ void printList() {
         current = current->next;
     }
     printf("\n");
-}
-
-int main() {
-    insert(1);
-    insert(2);
-    insert(3);
-    insert(4);
-    printList();
-    delete(3);
-    printList();
-    return 0;
 }
 
 
