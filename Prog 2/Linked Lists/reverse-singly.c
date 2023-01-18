@@ -9,6 +9,7 @@ struct Node {
 struct Node* createNode(int val);
 void display(struct Node* head);  
 struct Node* reverse(struct Node* head);
+void freeList(struct Node* head);
 
 int main()
 {
@@ -29,10 +30,7 @@ int main()
     printf("\n");
     display(head);
 
-    free(head);
-    free(node1);
-    free(node2);
-    free(node3);
+    freeList(head);
 
     return 0;
 }
@@ -45,7 +43,7 @@ struct Node* createNode(int val) {
 }
 
 void display(struct Node* head) {
-    struct Node* current = head->next;
+    struct Node* current = head;
     while (current != NULL) {
         printf("%d ", current->value);
         current = current->next;
@@ -64,4 +62,13 @@ struct Node* reverse(struct Node* head) {
     }
     head = prev;
     return head;
+}
+
+void freeList(struct Node* head) {
+    struct Node* current = head;
+    while (current != NULL) {
+        struct Node* temp = current;
+        current = current->next;
+        free(temp);
+    }
 }
