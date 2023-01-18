@@ -14,7 +14,7 @@ void freeList(struct Node* head);
 int main()
 {
     // in progress
-    struct Node* head = createNode(7);
+    struct Node* head = createNode(4);
 
     struct Node* node1 = createNode(1);
     head->next = node1;
@@ -27,7 +27,6 @@ int main()
 
     display(head);
     head = reverse(head);
-    printf("\n");
     display(head);
 
     freeList(head);
@@ -48,6 +47,7 @@ void display(struct Node* head) {
         printf("%d ", current->data);
         current = current->next;
     }
+    printf("\n");
 }
 
 struct Node* reverse(struct Node* head) {
