@@ -14,7 +14,7 @@ void freeList(struct Node* head);
 int main()
 {
     // in progress
-    struct Node* head = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* head = createNode(7);
 
     struct Node* node1 = createNode(1);
     head->next = node1;
