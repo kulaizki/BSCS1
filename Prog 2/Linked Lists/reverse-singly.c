@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 struct Node {
-    int value;
+    int data;
     struct Node* next;
 };
 
-struct Node* createNode(int val);
+struct Node* createNode(int value);
 void display(struct Node* head);  
 struct Node* reverse(struct Node* head);
 void freeList(struct Node* head);
@@ -35,9 +35,9 @@ int main()
     return 0;
 }
 
-struct Node* createNode(int val) {
+struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
-    newNode->value = val;
+    newNode->data = value;
     newNode->next = NULL;
     return newNode;
 }
@@ -45,7 +45,7 @@ struct Node* createNode(int val) {
 void display(struct Node* head) {
     struct Node* current = head;
     while (current != NULL) {
-        printf("%d ", current->value);
+        printf("%d ", current->data);
         current = current->next;
     }
 }
