@@ -15,10 +15,39 @@ void insert(struct Node** head, int x) {
     *head = newNode;
 }
 
+int isSorted(struct Node* head) {
+    while (head->next != NULL) {
+        if (head->data > head->next->data)
+            return 0;
+        head = head->next;
+    }
+    return 1;
+}
+
+int getSum(struct Node* head) {
+    int sum = 0;
+    while (head != NULL) {
+        sum += head->data;
+        head = head->next;
+    }
+    return sum;
+}
+
+void reverse(struct Node** head) {
+    struct Node* prev = NULL;
+    struct Node* current = *head;
+    struct Node* next = NULL;
+    while (current != NULL) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *head = prev;
+}
+
 void display(struct Node* head) {
-    printf("List is: ");
-    while (head != NULL) 
-    {
+    while (head != NULL) {
         printf("%d ", head->data);
         head = head->next;
     }
@@ -39,24 +68,20 @@ void insertAtPos(struct Node** head, int x, int pos) {
     newNode->next = NULL;
     struct Node* current = *head;
 
-    if (pos == 0) 
-    {
+    if (pos == 0) {
         newNode->next = *head;
         *head = newNode;
         return;
     }
-    else
-    {     
+    else {     
         int i = 0;
-        while (i < pos-1 && current != NULL)
-        {
+        while (i < pos-1 && current != NULL) {
             current = current->next;
             i++;
         }
     }
 
-    if (current != NULL)
-    {
+    if (current != NULL) {
         struct Node* temp = current->next;
         current->next = newNode;
         newNode->next = temp;
@@ -66,10 +91,21 @@ void insertAtPos(struct Node** head, int x, int pos) {
 int main()
 {
     struct Node* head = NULL;
-    insert(&head, 1);
-    insert(&head, 2);
+
     insert(&head, 3);
-    insertAtPos(&head, 7, 1); // inserted 7 to position 1 (0 is the first position)
-    display(head);
+    insert(&head, 2);
+    insert(&head, 1);
+    printf("Initial list: "); display(head);
+
+    printf("Insert 0 in position 0: ");
+    insertAtPos(&head, 0, 0); display(head); // inserted 0 to position 0
+    
+    isSorted(head) ? printf("List is sorted.") : printf("List is not sorted.");
+
+    printf("\nSum of the list = %d", getSum(head)); 
+
+    printf("\nReverse list: ");
+    reverse(&head); display(head);
+
     freeList(head);
 }
