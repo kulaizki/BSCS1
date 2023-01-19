@@ -15,6 +15,29 @@ void insert(struct Node** head, int x) {
     *head = newNode;
 }
 
+void insertAtPos(struct Node** head, int x, int pos) {
+    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+    newNode->data = x;
+    newNode->next = NULL;
+    struct Node* current = *head;
+
+    if (pos == 0) {
+        newNode->next = *head;
+        *head = newNode;
+        return;
+    }
+
+    for (int i = 0; i < pos-1 && current != NULL; i++) {
+        current = current->next;
+    }
+
+    if (current != NULL) {
+        struct Node* temp = current->next;
+        current->next = newNode;
+        newNode->next = temp;
+    }
+}
+
 int isSorted(struct Node* head) {
     while (head->next != NULL) {
         if (head->data > head->next->data)
@@ -62,30 +85,14 @@ void freeList(struct Node* head) {
     }
 }
 
-void insertAtPos(struct Node** head, int x, int pos) {
-    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
-    newNode->data = x;
-    newNode->next = NULL;
-    struct Node* current = *head;
-
-    if (pos == 0) {
-        newNode->next = *head;
-        *head = newNode;
-        return;
-    }
-    else {     
-        int i = 0;
-        while (i < pos-1 && current != NULL) {
-            current = current->next;
-            i++;
+void displayOdd(struct Node* head) {
+    while (head != NULL) {
+        if (head->data % 2) {
+            printf("%d ", head->data);
         }
+        head = head->next;
     }
-
-    if (current != NULL) {
-        struct Node* temp = current->next;
-        current->next = newNode;
-        newNode->next = temp;
-    }
+    printf("\n");
 }
 
 int main()
@@ -100,12 +107,14 @@ int main()
     printf("Insert 0 in position 0: ");
     insertAtPos(&head, 0, 0); display(head); // inserted 0 to position 0
     
-    isSorted(head) ? printf("List is sorted.") : printf("List is not sorted.");
+    isSorted(head) ? printf("List is sorted") : printf("List is not sorted");
 
     printf("\nSum of the list = %d", getSum(head)); 
 
     printf("\nReverse list: ");
     reverse(&head); display(head);
+
+    printf("Odd numbers in the list: "); displayOdd(head);
 
     freeList(head);
 }
