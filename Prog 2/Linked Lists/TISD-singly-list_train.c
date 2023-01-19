@@ -1,3 +1,5 @@
+// NOT YET FINAL
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -20,7 +22,6 @@ void freeList(struct Node* head);
 
 int main()
 {
-    // sentinel node
     struct Node* head = (struct Node*) malloc(sizeof(struct Node));
 
     struct Node* node1 = createNode(1);
