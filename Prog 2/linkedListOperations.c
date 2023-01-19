@@ -5,7 +5,8 @@ struct Node
 {
   int data;
   struct Node *next;
-} *first = NULL;
+};
+struct Node* first = NULL;
 
 void create(int A[], int n) // where n is the size
 {

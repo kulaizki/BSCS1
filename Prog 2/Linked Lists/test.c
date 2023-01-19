@@ -69,9 +69,7 @@ int main()
     insert(&head, 1);
     insert(&head, 2);
     insert(&head, 3);
-    insert(&head, 4);
-    insert(&head, 5);
-    insertAtPos(&head, 7, 1);
+    insertAtPos(&head, 7, 1); // inserted 7 to position 1 (0 is the first position)
     display(head);
     freeList(head);
 }
