@@ -107,7 +107,8 @@ int main()
     printf("Insert 0 in position 0: ");
     insertAtPos(&head, 0, 0); display(head); // inserted 0 to position 0
     
-    isSorted(head) ? printf("List is sorted") : printf("List is not sorted");
+    isSorted(head) ? printf("List is sorted") 
+                   : printf("List is not sorted");
 
     printf("\nSum of the list = %d", getSum(head)); 
 
