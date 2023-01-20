@@ -99,7 +99,7 @@ int main()
 {
     struct Node* head = NULL;
 
-    insert(&head, 3);
+    insert(&head, 3); // '&' used for double pointer argument
     insert(&head, 2);
     insert(&head, 1);
     printf("Initial list: "); display(head);
