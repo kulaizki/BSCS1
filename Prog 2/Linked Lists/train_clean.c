@@ -94,13 +94,13 @@ void freeList(struct Node* head) {
 int main()
 {
     struct Node* head = NULL;
-    int n, i;
+    int size, i;
 
-    printf("Enter n: ");
-    scanf("%d", &n);
+    printf("Enter size of list: ");
+    scanf("%d", &size);
 
     printf("Enter elements: ");
-    for (i = 0; i < n; ++i) {
+    for (i = 0; i < size; ++i) {
         int input;
         scanf("%d", &input);
         insertNode(&head, input);
