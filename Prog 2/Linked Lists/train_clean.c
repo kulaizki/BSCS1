@@ -16,6 +16,16 @@ void insertNode(struct Node** head, int value) {
     *head = newNode;
 }
 
+void insertEnd(struct Node** head, int value) {
+    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+    newNode->next = NULL;
+    newNode->data = value;
+
+    struct Node* current = *head;
+    while (current->next != NULL) current = current->next;
+    current->next = newNode;
+}
+
 void sortList(struct Node **head) {    
     if(*head == NULL) {
         printf("Error: The list is empty\n");
@@ -144,6 +154,9 @@ int main()
 
     sortList(&head); 
     printf("Sorted list: "); displayList(head);
+
+    insertEnd(&head, 9000);
+    printf("Inserted 9000 to end: "); displayList(head);
 
     freeList(head);
 }
