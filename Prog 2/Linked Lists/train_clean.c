@@ -16,12 +16,28 @@ void insertNode(struct Node** head, int value) {
     *head = newNode;
 }
 
-void sortList(struct Node **head) {
-    // in progress
-    
+void sortList(struct Node **head) {    
     if(*head == NULL) {
         printf("Error: The list is empty\n");
         return;
+    }
+
+    struct Node* ptr1;
+    struct Node* ptr2;
+    int temp;
+    ptr1 = *head;
+
+    while (ptr1->next != NULL) {
+        ptr2 = ptr1->next;
+        while (ptr2 != NULL) {
+            if (ptr1->data > ptr2->data) {
+                temp = ptr1->data;
+                ptr1->data = ptr2->data;
+                ptr2->data = temp;
+            }
+            ptr2 = ptr2->next;
+        }
+        ptr1 = ptr1->next;
     }
 }
 
@@ -103,13 +119,13 @@ void freeList(struct Node* head) {
 int main()
 {
     struct Node* head = NULL;
-    int size, i;
+    int length, i;
 
     printf("Enter size of list: ");
-    scanf("%d", &size);
+    scanf("%d", &length);
 
     printf("Enter elements: ");
-    for (i = 0; i < size; ++i) {
+    for (i = 0; i < length; ++i) {
         int input;
         scanf("%d", &input);
         insertNode(&head, input);
@@ -125,6 +141,9 @@ int main()
 
     printf("Max value in the list = %d\n", max);
     printf("Second max value in the list = %d\n", secondMax);
+
+    sortList(&head); 
+    printf("Sorted list: "); displayList(head);
 
     freeList(head);
 }
