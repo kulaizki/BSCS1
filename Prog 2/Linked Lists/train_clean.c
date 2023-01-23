@@ -16,8 +16,17 @@ void insertNode(struct Node** head, int value) {
     *head = newNode;
 }
 
+void sortList(struct Node **head) {
+    // in progress
+    
+    if(*head == NULL) {
+        printf("Error: The list is empty\n");
+        return;
+    }
+}
+
 void reverseList(struct Node** head) {
-    if(head == NULL) {
+    if(*head == NULL) {
         printf("Error: The list is empty\n");
         return;
     }
