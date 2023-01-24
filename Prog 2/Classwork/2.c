@@ -8,7 +8,8 @@ int *createArray() {
     int *newArr = (int *)malloc(sizeof(int) * n + 1);
     newArr[0] = n;
 
-    for (i = 1; i <= n; ++i) {
+    for (i = 1; i <= n; ++i) 
+    {
         scanf("%d", &newArr[i]);
     }
 
