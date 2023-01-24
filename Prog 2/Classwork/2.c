@@ -18,7 +18,8 @@ int *createArray() {
 
 int main()
 {
-    int *arr = createArray();
+    int *arr;
+    arr = createArray();
 
     for (int i = 0; i < 4; i++) {
         printf("%d ", arr[i]);
