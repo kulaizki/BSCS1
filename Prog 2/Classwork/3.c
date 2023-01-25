@@ -19,7 +19,7 @@ int main()
     printf("Current array: "); displayArray(arr, len);
 
     printf("\nTask 2:\n");
-    printf("Finding 4 and 7 in the array\n");
+    printf("Find 4 and 7 in the array\n");
     findElem(arr+1, len, 4) ? printf("4 is found\n")
                             : printf("4 is not found\n");
     findElem(arr+1, len, 7) ? printf("7 is found\n")
