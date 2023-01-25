@@ -5,7 +5,7 @@ int *inputData();
 void displayArray(int arr[], int n);
 int findElem(int arr[], int n, int val);
 void exchange(int *x, int *y);
-void swapFirstToSmallest(int arr[], int n);
+void swapFirstWithSmallest(int arr[], int n);
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
 
     printf("\nTask 3:\n");
     printf("Swap first and smallest element\n");
-    swapFirstToSmallest(arr, len); 
+    swapFirstWithSmallest(arr, len); 
     printf("Current array: "); displayArray(arr, len);
 
     free(arr);
@@ -69,15 +69,15 @@ void exchange(int *x, int *y) {
     *y = temp;
 }
 
-void swapFirstToSmallest(int arr[], int n) {
+void swapFirstWithSmallest(int arr[], int n) {
     int x, min = INT_MAX, *p;
     
     for (x = 1; x <= n; ++x) {
         if (arr[x] < min) {
             min = arr[x];
-            p = &arr[x];
+            p = arr+x;
         }
     }
 
-    exchange(&arr[1], p);
+    exchange(arr+1, p);
 }
