@@ -21,7 +21,7 @@ int main()
     int *arr;
     arr = createArray();
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 1; i <= arr[0]; i++) {
         printf("%d ", arr[i]);
     }
 
