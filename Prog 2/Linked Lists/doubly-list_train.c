@@ -69,6 +69,11 @@ void sortListAscending() {
         }
         node1 = node1->next;
     }
+    printf("\nSorted\n");
+}
+
+void sortListDescending() {
+
 }
 
 void displayHeadToTail() {
@@ -116,15 +121,12 @@ void freeList(struct Node* head) {
 int main()
 {
     insertAtHead(4);
-    insertAtHead(9);
-    insertAtTail(1);
-    insertAtTail(3);
+
     displayHeadToTail(); displayTailToHead();
 
-    printf("\nSorted\n");
+    
     sortListAscending(); 
     displayHeadToTail(); displayTailToHead();
-    
     
     freeList(head);
 
