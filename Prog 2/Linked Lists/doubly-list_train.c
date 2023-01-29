@@ -47,10 +47,18 @@ void insertAtTail(int value) {
 }
 
 void sortList() {
-    
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
 }
 
 void displayHeadToTail() {
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+
     struct Node* current = head;
 
     printf("Head to tail: ");
@@ -62,6 +70,11 @@ void displayHeadToTail() {
 }
 
 void displayTailToHead() {
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    
     struct Node* current = head;
 
     while (current->next != NULL) { current = current->next; }
