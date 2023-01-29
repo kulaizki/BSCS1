@@ -67,6 +67,36 @@ void insertAtPos(int value, int position) {
     current->next = newNode;
 }
 
+void deleteAtHead() {
+    if (head != NULL) {
+        struct Node* temp = head;
+        if (head->next != NULL) {
+            head = head->next;
+            head->prev = NULL;
+        }
+        else {
+            head = NULL;
+        }
+        free(temp);
+    }
+}
+
+void deleteAtTail() {
+    if (head != NULL) {
+        struct Node* temp = head;
+        if (head->next != NULL) {
+            while (temp->next != NULL) {
+                temp = temp->next;
+            }
+            temp->prev->next = NULL;
+        }
+        else {
+            head = NULL;
+        }
+        free(temp);
+    }
+}
+
 void sortListAscending() {
     if (head == NULL || head->next == NULL) {
         printf("List does not have enough nodes to sort\n");
