@@ -15,7 +15,6 @@ int main(void)
     printf("***p = %d\n", ***p);
     printf("**q = %d\n", **q);
 
-
     puts("\n\n");
 
     int H = 22;
