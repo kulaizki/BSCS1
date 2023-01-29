@@ -221,13 +221,15 @@ int main()
     insertAtHead(1);
     insertAtHead(6);
     insertAtHead(9);
+
+    insertAtTail(3);
     printf("Current list\n"); displayHeadToTail();
 
     insertAtPosition(2, 3);
     printf("\nInserted 2 in position 3\n"); displayHeadToTail();
+
     insertAtPosition(0, 0);
     printf("\nInserted 0 in position 0\n"); displayHeadToTail();
-    displayTailToHead();
 
     deleteAtHead();
     printf("\nDeleted at head\n"); displayHeadToTail();
