@@ -44,7 +44,7 @@ void insertAtTail(int value) {
     newNode->prev = current;
 }
 
-void insertAtPos(int value, int position) {
+void insertAtPosition(int value, int position) {
     struct Node* newNode = createNode(value);
     struct Node* current = head;
     int index = 0;
@@ -94,6 +94,29 @@ void deleteAtTail() {
             head = NULL;
         }
         free(temp);
+    }
+}
+
+void deleteAtPosition(int position) {
+    if (head != NULL) {
+        struct Node* temp = head;
+        if (position == 0) {
+            head = temp->next;
+            if (temp->next != NULL) { temp->next->prev = NULL; }
+            free(temp);
+            return;
+        }
+
+        for (int i = 0; i < position-1 && temp != NULL; i++) {
+            temp = temp->next;
+        }
+
+        if (temp != NULL && temp->next != NULL) {
+            struct Node* nextNode = temp->next->next;
+            free(temp->next);
+            temp->next = nextNode;
+            if (nextNode != NULL) { nextNode->prev = temp; }
+        }
     }
 }
 
@@ -200,11 +223,20 @@ int main()
     insertAtHead(9);
     printf("Current list\n"); displayHeadToTail();
 
-    insertAtPos(2, 3);
+    insertAtPosition(2, 3);
     printf("\nInserted 2 in position 3\n"); displayHeadToTail();
-    insertAtPos(0, 0);
+    insertAtPosition(0, 0);
     printf("\nInserted 0 in position 0\n"); displayHeadToTail();
     displayTailToHead();
+
+    deleteAtHead();
+    printf("\nDeleted at head\n"); displayHeadToTail();
+
+    deleteAtTail();
+    printf("\nDeleted at tail\n"); displayHeadToTail();
+
+    deleteAtPosition(2);
+    printf("\nDeleted at position 2\n"); displayHeadToTail();
     
     sortListAscending(); 
     displayHeadToTail(); displayTailToHead();
