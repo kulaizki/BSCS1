@@ -3,6 +3,9 @@
 
 int main()
 {
+    // strcpy syntax
+    // char *strcpy(char *dest, const char *src);
+    
     char str1[20] = "";
     char str2[20] = "";
 
