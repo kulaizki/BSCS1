@@ -4,8 +4,8 @@
 int main()
 {
     // strlen syntax
-    // size_t strlen(const char *str);
-    
+    // size_t strlen(const char *str); (size_t is unsigned int / unsigned long int)
+
     char str1[50] = "helloworld";
     char str2[50] = "hello world";
 
