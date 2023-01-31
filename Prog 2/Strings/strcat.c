@@ -3,11 +3,12 @@
 
 int main()
 {
+    // strcat syntax
+    // char *strcat(char *dest, const char *src);
+
     char destination1[50] = "Hello, ";
     char source1[50] = "world";
 
-    // strcat syntax
-    // char *strcat(char *dest, const char *src);
     strcat(destination1, source1);
     printf("%s\n", destination1);
 
