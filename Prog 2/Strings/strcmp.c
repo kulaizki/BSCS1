@@ -3,6 +3,9 @@
 
 int main()
 {
+    // strcmp syntax
+    // int strcmp(const char *str1, const char *str2);
+    
     char str1[50] = "helloworld";
     char str2[50] = "hello world";
     char str3[50] = "hello world";
