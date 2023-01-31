@@ -3,6 +3,9 @@
 
 int main()
 {
+    // strlen syntax
+    // size_t strlen(const char *str);
+    
     char str1[50] = "helloworld";
     char str2[50] = "hello world";
 
