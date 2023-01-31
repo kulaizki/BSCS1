@@ -3,9 +3,12 @@
 
 int main()
 {
-    char dest[50] = "";
-    char source[50] = "Hello, world";
+    char str1[20] = "";
+    char str2[20] = "";
 
-    strcpy(dest, source);
-    printf("%s\n", dest);
+    strcpy(str1, "Hello, world");
+    strcpy(str2, str1);
+
+    printf("str1: %s\n", str1);
+    printf("str2: %s\n", str2);
 }
