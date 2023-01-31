@@ -6,7 +6,7 @@ int main()
     char *str2 = "abcdefgijklmnopqrstuvwxyz";
     char *str3 = "zxc";
 
-    printf("%p\n", str1);
-    printf("%p\n", str2);
-    printf("%p\n", str3);
+    printf("Address of str1: %p\n", str1);
+    printf("Address of str2: %p\n", str2);
+    printf("Address of str3: %p\n", str3);
 }
