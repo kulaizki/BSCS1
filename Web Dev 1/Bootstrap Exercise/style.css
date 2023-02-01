@@ -2,6 +2,7 @@ body {
     color: aliceblue;
     /* background: linear-gradient(to right, rgb(83, 2, 102), rgb(30, 25, 31)); */
     background: linear-gradient(to right, rgb(3, 81, 130), rgb(124, 3, 124), rgb(190, 131, 5));
+    text-align: center;
 }
 
 .row h1 {
@@ -19,7 +20,10 @@ body {
     border-bottom: solid .2rem rgb(191, 142, 206);
 }
 
+.col-6 h2 {
+    margin-top: 1rem;
+}
+
 img {
     max-width: 100%;
-    margin-bottom: 2rem;
 }
