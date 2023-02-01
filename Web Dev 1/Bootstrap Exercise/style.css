@@ -1,13 +1,23 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    font-size: 62.5%;
-}
+/* * {
+    border: solid 1px red;
+} */
 
 body {
     color: aliceblue;
-    background: linear-gradient(to right, #155d81, #159384);
+    background: linear-gradient(to right, rgb(83, 2, 102), rgb(30, 25, 31));
+}
+
+.row h1 {
+    color: aliceblue;
+    text-shadow: 0 0 1.5rem aliceblue;
+}
+
+.row {
+    padding: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
