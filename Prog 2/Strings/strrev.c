@@ -7,7 +7,8 @@ int main()
     // char* strrev(char* str);
     
     char str[20] = "Hello, world";
-    char *reverse = strrev(str);
-
-    printf("%s", reverse);
+    
+    puts(str);
+    strrev(str);
+    puts(str);
 }
