@@ -3,6 +3,7 @@ body {
     color: aliceblue;
     background: linear-gradient(to right, rgb(3, 81, 130), rgb(124, 3, 124), rgb(190, 131, 5));
     height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -19,33 +20,23 @@ h1, h2 {
     text-shadow: 0 0 1.5rem aliceblue;
 }
 
+img {
+    max-width: 100%;
+}
+
 .col-6 {
     padding: 2rem;
     border-top: solid .2rem rgb(191, 142, 206);
     border-bottom: solid .2rem rgb(191, 142, 206);
 }
 
+.col-6 img {
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem #000;
+}
+
 .col-6 h2 {
     margin-top: 1rem;
-}
-
-.col-6 img {
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem #000;
-}
-
-img {
-    max-width: 100%;
-}
-
-.col-6 img {
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem #000;
-}
-
-.col-3 img {
-    margin-top: 2rem;
-    max-width: 100%;
 }
 
 #orb1 {
@@ -61,7 +52,7 @@ img {
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(359deg);
     }
 }
 
