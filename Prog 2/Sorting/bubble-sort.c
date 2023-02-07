@@ -14,19 +14,6 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-void bubbleSort(int arr[], int n) {
-    int x, y, temp;
-    for (x = 0; x < n-1; ++x) {
-        for (y = y+1; y < n; ++y) {
-            if (arr[x] > arr[y]) {
-                temp = arr[x];
-                arr[x] = arr[y];
-                arr[y] = temp;
-            }
-        }
-    }
-}
-
 void display(int arr[], int n) {
     int x;
     printf("Current array: ");
