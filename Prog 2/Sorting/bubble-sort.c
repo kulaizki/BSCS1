@@ -24,9 +24,9 @@ void display(int arr[], int n) {
 
 int main()
 {
-    int arr[] = {4, 9, 2, 1};
+    int arr[] = {4, 9, 2, 1, 5};
 
-    display(arr, 4);
-    bubbleSort(arr, 4);
-    display(arr, 4);
+    display(arr, 5);
+    bubbleSort(arr, 5);
+    display(arr, 5);
 }
