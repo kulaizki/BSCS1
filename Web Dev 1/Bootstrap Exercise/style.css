@@ -5,13 +5,10 @@ body {
     text-align: center;
 }
 
-.row h1 {
-    color: aliceblue;
-    text-shadow: 0 0 1.5rem aliceblue;
-}
-
 .row {
     padding: 1.5rem;
+    color: aliceblue;
+    text-shadow: 0 0 1.5rem aliceblue;
 }
 
 .col-6 {
@@ -22,6 +19,11 @@ body {
 
 .col-6 h2 {
     margin-top: 1rem;
+}
+
+.col-6 img {
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem #000;
 }
 
 img {
