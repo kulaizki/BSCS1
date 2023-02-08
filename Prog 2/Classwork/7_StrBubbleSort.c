@@ -22,6 +22,6 @@ void bubbleSort(char *str) {
 
 int main()
 {
-    char str[5] = "dcba";
+    char str[9] = "zxjchsad";
     bubbleSort(str);
 }
