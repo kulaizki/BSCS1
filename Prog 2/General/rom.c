@@ -2,6 +2,7 @@
 
 int main()
 {
+    // RAM and ROM are immutable storages
     char *str1 = "Hello";
     char str2[] = "Hello";
     
