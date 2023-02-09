@@ -11,5 +11,4 @@ int main()
     printf("Address of str2: %p\n", str2);
     printf("Address of str3: %p\n", str3);
     printf("Address of str4: %p\n", str4);
-
 }
