@@ -7,7 +7,7 @@ void insertionSort(int arr[], int n) {
         y = x-1;
         while (y >= 0 && arr[y] > key) {
             arr[y + 1] = arr[y];
-            y = y-1;
+            y--;
         }
         arr[y+1] = key;
     }
