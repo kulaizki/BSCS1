@@ -9,6 +9,6 @@ int isSorted(int A[], int count) {
 
 int main()
 {
-    int arr[] = {2, 1};
-    printf("%d", isSorted(arr, 2));
+    int arr[] = {1, 2, 3 ,4};
+    printf("%d", isSorted(arr, 4));
 }
