@@ -10,7 +10,7 @@ body {
     text-align: center;
     background: linear-gradient(to right, rgb(3, 81, 130), rgb(124, 3, 124), rgb(190, 131, 5));
     border-radius: 1.5rem;
-    padding: 2rem;
+    padding: 4rem;
 }
 
 .row {
@@ -35,6 +35,7 @@ img {
 .col-6 img {
     border-radius: 1rem;
     box-shadow: 0 0 1rem #000;
+    height: 38vh;
 }
 
 .col-6 h2 {
@@ -43,8 +44,8 @@ img {
 
 span {
     font-size: large;
-    color: rgb(246, 200, 132);
-    text-shadow: 0 0 1rem rgb(246, 200, 132);
+    color: rgb(241, 241, 241);
+    text-shadow: 0 0 1rem rgb(255, 245, 245);
 }
 
 .interact {
@@ -63,11 +64,15 @@ button {
     background-color: rgb(240, 161, 239);
 }
 
+button:hover {
+    filter: opacity(.75);
+}
+
 textarea {
     padding: .75rem;
     border-radius: .7rem;
     outline: none;
-    width: 32rem;
+    width: 30rem;
 }
 
 #orb1 {
