@@ -9,6 +9,5 @@ int isFound(int arr[], int count, int x) {
 int main() 
 {
     int arr[5] = {1, 2, 3, 4, 5};
-
     printf("%d", isFound(arr, 5, 4));
 }
