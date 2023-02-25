@@ -1,27 +1,42 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(void)
 {
-    int rows, cols;
+    int rows, cols, ctr, flag = 0;
 
-    printf("Enter number of rows: ");
+    printf("Enter the number of rows: ");
     scanf("%d", &rows);
-    printf("Enter number of columns: ");
+
+    printf("Enter the number of columns: ");
     scanf("%d", &cols);
 
-    int arr[rows][cols], indexArray[11] = {0};
-    for (int *p = *arr; p < *arr + (rows * cols); p++)
-        scanf("%d", p);
+    int arr[rows][cols];
 
-    for (int *p = *arr; p < *arr + (rows * cols); p++)
-        indexArray[*p]++;
+    printf("Elements:\n");
 
-    for (int i = 0; i < 11; i++)
-        if (indexArray[i] == 1)
-            puts("SPY"), exit(EXIT_SUCCESS);
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+            scanf("%d", &arr[i][j]);
+    }
 
-    puts("NONE");
-    
-    return 0;
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < cols; j++) {
+            ctr = 0;    
+            for (int k = 0; k < rows; k++) {
+                for (int l = 0; l < cols; l++) {
+                    if (arr[i][j] == arr[k][l]) {
+                        ctr++;
+                    }
+                }
+            }
+            if (ctr == 1)
+                flag++;         
+        }
+    }
+
+    if (flag)
+        puts("SPY");
+    else
+        puts("NONE");
 }
