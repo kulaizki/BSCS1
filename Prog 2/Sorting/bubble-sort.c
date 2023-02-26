@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-void exchange(int *x, int *y) {
+void swap(int *x, int *y) {
     int temp = *x;
     *x = *y;
     *y = temp;
 }
 
 void bubbleSort(int arr[], int n) {
-    int x, y, temp;
-    for (x = 0; x < n-1; ++x) {
+    int x, y, temp; n--;
+    for (x = 0; x < n; ++x) {
         for (y = 0; y < n-x-1; ++y) {
             if (arr[y] > arr[y+1]) {
-                exchange(arr+y, arr+y+1);
+                swap(arr+y, arr+y+1);
             }
         }
     }
