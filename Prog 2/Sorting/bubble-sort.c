@@ -26,8 +26,8 @@ void display(int arr[], int n) {
     printf("\n");
 }
 
-int main()
-{
+int main() {
+    
     int arr[] = {4, 9, 2, 1, 5};
 
     display(arr, 5);
