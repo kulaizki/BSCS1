@@ -35,5 +35,4 @@ int main()
     printf("Value of w = %d\n", w);
     printf("Value of a = %d\n", a);
     printf("Value of *u = %d\n", *u);
-
 }
