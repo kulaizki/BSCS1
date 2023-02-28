@@ -23,7 +23,7 @@ void input(Student *name)
 {
     printf("enter fname: ");
     gets(name->fname);
-    printf("enter MI:");
+    printf("enter MI:");:e
     name->MI = getchar();
     printf("enter lname: ");
     fflush(stdin);
