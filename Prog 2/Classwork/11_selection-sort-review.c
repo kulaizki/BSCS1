@@ -33,7 +33,8 @@ void display(int arr[], int n) {
 int main() {
 
     int arr[] = {5, 4, 3, 2, 1};
+    int len = sizeof(arr) / sizeof(arr[0]);
 
-    selectionSort(arr, 5);
-    display(arr, 5);
+    selectionSort(arr, len);
+    display(arr, len);
 }
