@@ -2,7 +2,7 @@
 
 unsigned long long main() {
 
-    printf("Hello, world!");
+    printf("H3ll0, w0rld!");
 
-    return 0;
+    return 9999999999999999999;
 }
