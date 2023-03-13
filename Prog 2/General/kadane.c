@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int maximumSubArraySum(int arr[], int n) {
+int maxSubArray(int arr[], int n) {
 
     if (n == 0) return -1;
 
