@@ -20,13 +20,11 @@ void selectionSort(char *s) {
                 min_idx = y;
             }
         }
-
         if (min_idx != 0) {
             char temp = s[x];
             s[x] = s[min_idx];
             s[min_idx] = temp;
         }
-
         printf("Iteration %d: ", x+1);
         puts(s);
     }
