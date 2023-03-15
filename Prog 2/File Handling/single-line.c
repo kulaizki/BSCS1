@@ -8,7 +8,7 @@ int main() {
 
     while (!feof(fpointer)) {
         fgets(single_line, 150, fpointer);
-        printf("%s", single_line); // can alo use puts
+        printf("%s", single_line); // can also use puts
     }
 
     fclose(fpointer);
