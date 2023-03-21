@@ -7,7 +7,7 @@ void binarySearch(int arr[], int n, int x) {
     while (l <= h) {
         int m = l + (h - l) / 2;
         if (x == arr[m]) {
-            printf("%d is in index %d\n", x, m);
+            printf("%d found at index %d\n", x, m);
             return;
         }
         
@@ -18,7 +18,7 @@ void binarySearch(int arr[], int n, int x) {
         }
     }
 
-    printf("%d NOT FOUND", x);
+    printf("%d not found\n", x);
 }
 
 int main() {
