@@ -21,11 +21,11 @@ typedef struct list {
 
 int main() {
 	
-	LIST x = {{{{"Singh", "Fitzsixto Angelo", 'L'}, 20103994, "BSCS", 1},
-			   {{"Singh2", "Fitz2", 'L'}, 20103994, "BSCS", 1},
-               {{"Singh3", "Fitz3", 'L'}, 20103994, "BSCS", 1},
-			   {{"Singh4", "Fitz4", 'L'}, 20103994, "BSCS", 1},
-			   {{"Singh5", "Fitz5", 'L'}, 20103994, "BSCS", 1}},
+	LIST x = {{{{"Singh", "Fitzsixto", 'A'}, 20103994, "BSCS", 1},
+			   {{"Lim", "Reece", 'B'}, 20103994, "BSCS", 1},
+               {{"de Jesus", "Christian", 'C'}, 20103994, "BSCS", 1},
+			   {{"Go", "Philip", 'D'}, 20103994, "BSCS", 1},
+			   {{"Bonghanoy", "Samuel", 'E'}, 20103994, "BSCS", 1}},
 		5 // count
 	};
 		
