@@ -27,32 +27,28 @@ studrec findStudent(LIST L, char ID[]) {
 }
 
 int main() {
-    // Create the list
+    
     LIST head = NULL;
     LIST current = NULL;
 
-    // Create the first studrec and add it to the list
     studrec student1 = {"123456789", {"John", "Doe", 'A'}, "BSCS", 2};
     current = (LIST) malloc(sizeof(struct node));
     current->stud = student1;
     current->link = NULL;
     head = current;
 
-    // Create the second studrec and add it to the list
     studrec student2 = {"234567890", {"Jane", "Smith", 'B'}, "BSCS", 1};
     current->link = (LIST) malloc(sizeof(struct node));
     current = current->link;
     current->stud = student2;
     current->link = NULL;
 
-    // Create the third studrec and add it to the list
     studrec student3 = {"345678901", {"Bob", "Johnson", 'C'}, "BSCS", 3};
     current->link = (LIST) malloc(sizeof(struct node));
     current = current->link;
     current->stud = student3;
     current->link = NULL;
 
-    // Print out the list to verify that it was created correctly
     current = head;
     while (current != NULL) {
         printf("Student ID: %s\n", current->stud.ID);
