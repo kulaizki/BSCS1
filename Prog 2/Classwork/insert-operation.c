@@ -63,7 +63,7 @@ int main() {
     temp->stud = student3;
     temp->link = NULL;
 
-    studrec student4 = {"1011", {"Insert", "This", 'L'}, "BSCS", 4};
+    studrec student4 = {"1011", {"Insert", "This", 'C'}, "BSCS", 4};
     insertSorted(&head, student4);
 
     temp = head;
