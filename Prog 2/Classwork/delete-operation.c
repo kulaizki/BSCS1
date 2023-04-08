@@ -19,7 +19,7 @@ typedef struct node {
 
 void insertSorted(LIST *L, studrec S) {
 
-
+    // start
 }
 
 int main() {
