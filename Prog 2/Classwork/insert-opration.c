@@ -20,8 +20,19 @@ typedef struct node {
 
 void insertSorted(LIST *L, studrec S) {
 
-    LIST temp = L;
-    while (temp != NULL && temp->stud.ID)
+    LIST newNode = (LIST) malloc(sizeof(struct node));
+    newNode->stud = S;
+    
+    LIST current = *L;
+    while (current != NULL && strcmp(current->stud.ID, S.ID) == 1) {
+        current = current->link;
+    }
+
+    if (current != NULL) {
+        LIST temp = current->link;
+        current->link = newNode;
+        newNode->link = temp;
+    }
 }
 
 int main() {
@@ -46,6 +57,9 @@ int main() {
     current = current->link;
     current->stud = student3;
     current->link = NULL;
+
+    studrec student4 = {"133333333", {"Insert", "This", 'L'}, "BSCS", 4};
+    insertSorted(&head, student4);
 
     current = head;
     while (current != NULL) {
