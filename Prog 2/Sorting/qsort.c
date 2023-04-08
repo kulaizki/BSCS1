@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int cmpfunc (const void * a, const void * b);
+int cmpfunc (const void *a, const void *b);
 void display(int arr[], int n);
 
 int main() {
@@ -14,8 +14,8 @@ int main() {
 
 }
 
-int cmpfunc (const void * a, const void * b) {
-    return ( *(int*)a - *(int*)b );
+int cmpfunc (const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
 }
 
 void display(int arr[], int n) {
