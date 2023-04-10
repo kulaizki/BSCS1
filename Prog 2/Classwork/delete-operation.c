@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct {
    char FN[24], LN[16], MI;
@@ -17,9 +18,30 @@ typedef struct node {
     struct node *link;
 } *LIST;
 
-void insertSorted(LIST *L, studrec S) {
+int deleteAll(LIST *L, char course[]) {
 
-    // start
+    LIST prev = NULL;
+    LIST C = *L;
+    int deleted = 0;
+
+    while (C != NULL) {
+        if (strcmp(C->stud.course, course) == 0) {
+            deleted++;
+            LIST temp = C;
+            if (prev == NULL) {
+                *L = C->link;
+            } else {
+                prev->link = C->link;
+            }
+            C = C->link;
+            free(temp);
+        } else {
+            prev = C;
+            C = C->link;
+        }
+    }
+
+    return deleted;
 }
 
 int main() {
@@ -27,13 +49,13 @@ int main() {
     LIST head = NULL;
     LIST temp = NULL;
 
-    studrec student1 = {"1111", {"John", "Doe", 'A'}, "BSCS", 2};
+    studrec student1 = {"1111", {"John", "Doe", 'A'}, "BSIT", 2};
     temp = (LIST) malloc(sizeof(struct node));
     temp->stud = student1;
     temp->link = NULL;
     head = temp;
 
-    studrec student2 = {"2222", {"Jane", "Smith", 'B'}, "BSCS", 1};
+    studrec student2 = {"2222", {"Jane", "Smith", 'B'}, "BSIT", 1};
     temp->link = (LIST) malloc(sizeof(struct node));
     temp = temp->link;
     temp->stud = student2;
@@ -45,8 +67,7 @@ int main() {
     temp->stud = student3;
     temp->link = NULL;
 
-    studrec student4 = {"1011", {"Insert", "This", 'L'}, "BSCS", 4};
-    insertSorted(&head, student4);
+    printf("%d\n", deleteAll(&head, "BSIT"));
 
     temp = head;
     while (temp != NULL) {
