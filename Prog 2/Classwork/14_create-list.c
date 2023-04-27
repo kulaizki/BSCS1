@@ -14,7 +14,8 @@ typedef struct {
 } ArrayList;
 
 ArrayList createList (ArrayList *L, char C[]) {
-    ArrayList A;
+    
+    ArrayList A = {.count = 0};
     int x = 0, y;
     while (x < L->count) {
         if (strcmp(L->elem[x].course, C) == 0) {
