@@ -14,7 +14,7 @@ typedef struct {
 } ArrayList;
 
 ArrayList createList (ArrayList *L, char C[]) {
-    
+
     ArrayList A = {.count = 0};
     int x = 0, y;
     while (x < L->count) {
@@ -37,6 +37,7 @@ ArrayList createList (ArrayList *L, char C[]) {
 }
 
 void display(ArrayList L) {
+    
     int x;
     for (x = 0; x < L.count; ++x) {
         printf("ID: %s | Course: %s\n", L.elem[x].ID, L.elem[x].course);
