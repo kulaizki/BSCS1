@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX 10
+#define MAX 3
 
 typedef struct {
     char ID[10];
@@ -14,6 +14,14 @@ typedef struct {
 
 int main() {
 
+    ArrayList A = {{{"123", "BSCS"}, {"456", "BSIT"}, {"789", "BSCS"}}, 3};
+
     FILE *fp;
-	fp = fopen("./data.txt", "r");
+	fp = fopen("./data.txt", "w");
+
+    fwrite(&A, sizeof(A), 1, fp);
+
+    fclose(fp);
+
+    return 0;
 }
