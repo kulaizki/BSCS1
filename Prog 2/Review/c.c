@@ -13,6 +13,8 @@ void insertEnd(LinkedList *head, int value);
 void deleteFront(LinkedList *head);
 void deleteAtPos(LinkedList *head, int pos);
 void deleteEnd(LinkedList *head);
+void sortList(LinkedList *head);
+void insertSorted(LinkedList *head, int value);
 void displayList(LinkedList head);
 
 int main() {
@@ -28,6 +30,12 @@ int main() {
     displayList(head);
 
     insertAtPos(&head, 5, 1);
+    displayList(head);
+
+    sortList(&head);
+    displayList(head);
+
+    insertSorted(&head, 6);
     displayList(head);
 
     deleteFront(&head);
@@ -124,6 +132,46 @@ void deleteEnd(LinkedList *head) {
         free(temp->link);
         temp->link = NULL;
     }
+}
+
+void sortList(LinkedList *head) {
+
+    if (*head == NULL || (*head)->link == NULL) {
+        return;
+    }
+
+    int swapped = 1;
+    LinkedList current;
+    LinkedList last = NULL;
+
+    while (swapped) {
+        swapped = 0;
+        current = *head;
+
+        while (current->link != last) {
+            if (current->data > current->link->data) {
+                int temp = current->data;
+                current->data = current->link->data;
+                current->link->data = temp;
+                swapped = 1;
+            }
+            current = current->link;
+        }
+
+        last = current;
+    }
+}
+
+void insertSorted(LinkedList *head, int value) {
+
+    LinkedList newNode = (LinkedList)malloc(sizeof(struct node));
+    newNode->data = value;
+    LinkedList temp;
+
+    for (temp = *head; temp->link != NULL && value > temp->link->data; temp = temp->link) {}
+
+    newNode->link = temp->link;
+    temp->link = newNode;
 }
 
 void displayList(LinkedList head) {
