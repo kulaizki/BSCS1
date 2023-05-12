@@ -168,10 +168,15 @@ void insertSorted(LinkedList *head, int value) {
     newNode->data = value;
     LinkedList temp;
 
-    for (temp = *head; temp->link != NULL && value > temp->link->data; temp = temp->link) {}
+    if (*head == NULL || value <= (*head)->data) {
+        newNode->link = *head;
+        *head = newNode;
+    } else {
+        for (temp = *head; temp->link != NULL && value > temp->link->data; temp = temp->link) {}
 
-    newNode->link = temp->link;
-    temp->link = newNode;
+        newNode->link = temp->link;
+        temp->link = newNode;
+    }
 }
 
 void displayList(LinkedList head) {
