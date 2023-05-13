@@ -21,11 +21,11 @@ int main() {
 
     LinkedList head = NULL;
 
-    insertEnd(&head, 9);
     insertEnd(&head, 1);
+    insertEnd(&head, 2);
     insertEnd(&head, 3);
-    insertEnd(&head, 7);
-    insertEnd(&head, 8);
+    insertEnd(&head, 4);
+    insertEnd(&head, 5);
     printf("Original List\n");
     displayList(head);
 
