@@ -26,6 +26,7 @@ int main() {
     insertEnd(&head, 3);
     insertEnd(&head, 4);
     insertEnd(&head, 5);
+
     printf("Original List\n");
     displayList(head);
 
@@ -45,6 +46,7 @@ int main() {
     }
 
     fclose(fp);
+    
     printf("New List\n");
     displayList(newHead);
 }
