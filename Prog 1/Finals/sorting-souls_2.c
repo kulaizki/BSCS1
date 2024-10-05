@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+
 #define MAX_SIZE 50
 
 void display(int arr[]);
