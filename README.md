@@ -1,4 +1,4 @@
-# Project Workspace
+# BSCS1
 
 This repository contains all my programs created during my first year of Computer Science in the University of San Carlos.
 
