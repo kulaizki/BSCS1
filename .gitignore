@@ -1,0 +1,166 @@
+# macOS specific ignores
+########################
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder/
+Temporary Items/
+.apdisk
+
+# General ignores
+#################
+
+# IDEA Ignores
+# IntelliJ IDEA and other JetBrains IDEs
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+# Android Studio specific
+local.properties
+
+# Generic Android ignores
+bin/
+target/
+gen/
+
+# Compiled source files
+# C / C++
+*.o
+*.a
+*.so
+*.ko
+*.obj
+*.lib
+*.dll
+*.exe
+# Java
+*.class
+*.jar
+*.war
+*.ear
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+# Other
+*.com
+
+# Packages & Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+*.deb
+*.rpm
+*.pkg
+*.msi
+*.msm
+*.msp
+
+# Log files
+log/
+logs/
+*.log
+*.log.[0-9]
+*.logs
+
+# Databases
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+# OS generated files
+# Windows
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+# macOS (some already covered above, these are additional/variants)
+.DS_Store? 
+Icon?
+# Linux
+*~
+.#*
+*.swp
+*.swo
+
+# VCS (Version Control System) files from other systems
+.svn/
+CVS/
+.hg/
+.gitattributes # Often better to commit, but some prefer to ignore if user-specific
+
+# XCode specific
+# (Some might overlap with macOS global, but being explicit is fine)
+*.xccheckout
+*.xcodeproj/xcuserdata/
+*.xcuserdatad/
+*.xcworkspace/xcuserdata/
+*.hmap
+*.xcscheme
+*.xcsettings
+# Swift Package Manager
+.build/
+Packages/
+DerivedData/
+xcuserdata/
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# Build directories
+build/
+dist/
+release/
+Debug/
+Release/
+
+# Dependency directories
+node_modules/
+bower_components/
+vendor/ # Common in PHP (Composer), Ruby (Bundler)
+jspm_packages/
+Pods/ # CocoaPods
+
+# Environment files
+.env
+.env.*
+!.env.example # Often good to keep an example env file
+
+# IDE specific folders/files
+.vscode/
+.settings/
+.classpath
+.project
+*.sublime-workspace
+*.sublime-project
+
+# Output of test runners
+coverage/
+.nyc_output/
+junit/
+test-results/
+
+# Temporary files
+*.tmp
+*.temp
+*.~*
+~$* 
