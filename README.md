@@ -2,9 +2,7 @@
 
 This repository contains all my programs created during my first year of Computer Science in the University of San Carlos.
 
-## Main Folders
-
-### [Prog 1](./Prog%201/)
+## [Prog 1](./Prog%201/)
 - [C Pattern Practice](./Prog%201/C%20Pattern%20Practice/)
 - [General](./Prog%201/General/)
 - [Pointers Review](./Prog%201/Pointers%20Review/)
@@ -12,7 +10,7 @@ This repository contains all my programs created during my first year of Compute
 - [Finals Reviewer](./Prog%201/Finals%20Reviewer/)
 - [C Challenges](./Prog%201/C%20Challenges/)
 
-### [Prog 2](./Prog%202/)
+## [Prog 2](./Prog%202/)
 - [Structs](./Prog%202/Structs/)
 - [Sorting](./Prog%202/Sorting/)
 - [Strings](./Prog%202/Strings/)
@@ -25,6 +23,6 @@ This repository contains all my programs created during my first year of Compute
 - [Classwork](./Prog%202/Classwork/)
 - [File Handling](./Prog%202/File%20Handling/)
 
-### [Web Dev 1](./Web%20Dev%201/)
+## [Web Dev 1](./Web%20Dev%201/)
 - [JS Exercise](./Web%20Dev%201/JS%20Exercise/)
 - [Bootstrap Exercise](./Web%20Dev%201/Bootstrap%20Exercise/)
